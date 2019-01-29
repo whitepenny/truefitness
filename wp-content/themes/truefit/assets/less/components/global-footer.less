@@ -1,0 +1,71 @@
+.footer {
+  .relative;
+
+  background-color: @black;
+  padding: 50px 0;
+
+  z-index: 1;
+
+}
+
+.footer_about_cell {
+  margin: 20px 0 0 0;
+  text-align: left;
+
+  @media @min_lg {
+    margin: 0;
+  }
+
+  .footer_about_content {
+    color: @white;
+    font-size: 16px;
+  }
+}
+
+.footer_logo_cell {
+  text-align: center;
+
+  .footer_social {
+    margin: 30px 0 0 0;
+    padding-right: 40px; // center logos to the eye
+
+    .footer_social_link {
+      margin-left: 8px;
+    }
+  }
+}
+
+.footer_address_cell {
+  margin: 20px 0 0 0;
+  text-align: left;
+
+  @media @min_lg {
+    margin: 0;
+  }
+
+  .footer_address_content {
+    color: @white;
+    font-size: 16px;
+  }
+
+  .footer_email {
+    .block;
+    .lato;
+    .transition_link;
+
+    color: @white;
+    font-size: 16px;
+
+    &:hover {
+      color: @blue;
+    }
+  }
+}
+
+.footer_copyright {
+  .lato;
+
+  color: @white;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+}

@@ -1,0 +1,94 @@
+// partial and block styles are shared
+
+.team_grid {
+  .relative;
+
+  padding: 0 0 70px 0;
+  z-index: 1;
+
+  @media @min_lg {
+    padding: 30px 0 120px;
+  }
+}
+
+.team_grid_title {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.team_member {
+  .relative;
+
+  cursor: pointer;
+  height: 345px;
+  margin: 0 0 20px 0;
+  z-index: 1;
+
+  @media @min_lg {
+    height: 300px;
+    margin: 0 0 20px 0;
+  }
+
+  @media @min_xl {
+    height: 375px;
+    margin: 0 0 25px 0;
+  }
+
+  &:before {
+    .absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: fade(@black, 80%);
+    content: '';
+    opacity: 0;
+    transition: opacity 0.10s linear;
+    z-index: 2;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+
+    .team_member_content_container {
+      opacity: 1;
+    }
+  }
+}
+
+.team_member_content_container {
+  .relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+
+  height: 100%;
+  opacity: 0;
+  padding: 30px 25px;
+  transition: opacity 0.15s linear;
+  z-index: 5;
+}
+
+.team_member_title {
+  color: @white;
+  font-size: 42px;
+  margin: 0;
+  line-height: 0.9;
+}
+
+.team_member_subtitle {
+  margin: 5px 0 0 0;
+}
+
+.team_member_content {
+  color: @white;
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  line-height: 1.4;
+}

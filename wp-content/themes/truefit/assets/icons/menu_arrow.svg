@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="36px" viewBox="0 0 17 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Down Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000394689362 0.0785806874 25.6473094 0.0785806874 25.6473094 17.0254227 0.000394689362 17.0254227"></polygon>
+        <polygon id="path-3" points="0.199581254 0.0785806874 25.8543898 0.0785806874 25.8543898 17.0254227 0.199581254 17.0254227"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Programs" transform="translate(-1095.000000, -28.000000)">
+            <g id="NAV" transform="translate(25.000000, 10.000000)">
+                <g id="Down-Arrow" transform="translate(1079.000000, 35.500000) rotate(-90.000000) translate(-1079.000000, -35.500000) translate(1060.500000, 26.500000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M18.749455,5.70194565 L14.8867618,2.62420206 C11.0385405,-0.440444753 5.58524916,-0.769173962 1.31734153,1.80565323 L0.000394689362,2.60193753 L18.1047957,17.0254227 L25.6473094,11.1619937" id="Fill-1" fill="#2AABE1" mask="url(#mask-2)"></path>
+                    </g>
+                    <g id="Group-6" transform="translate(10.060709, 0.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-5"></g>
+                        <path d="M7.10532945,5.70194565 L10.9680227,2.62420206 C14.8162439,-0.440444753 20.2695353,-0.769173962 24.5374429,1.80565323 L25.8543898,2.60193753 L7.74998874,17.0254227 L0.199581254,11.1711615" id="Fill-4" fill="#2AABE1" mask="url(#mask-4)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,90 @@
+.class_content {
+  .relative;
+
+  padding: 70px 0;
+  z-index: 1;
+}
+
+.class_content_logo {
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.class_page_content {
+  padding-bottom: 40px;
+
+  @media @min_lg {
+    padding-bottom: 0;
+  }
+}
+
+
+ .class_sidebar_cell {
+   background-color: @gray_10;
+   padding: 50px 45px;
+   text-align: center;
+
+   @media @max_sm {
+    padding: 50px 20px;
+   }
+
+   @media @min_lg {
+     text-align: left;
+   }
+ }
+
+ .class_sidebar_title {
+   margin: 0;
+   padding: 0;
+ }
+
+ .class_sidebar_icon {
+   margin-right: 8px;
+   vertical-align: text-bottom;
+ }
+
+ .class_sidebar_link {
+   .inline_block;
+   .lato_black;
+   .transition_link;
+
+   background: url('../images/blog_arrow.svg') no-repeat right center;
+   color: @black;
+   font-size: 14px;
+   font-style: italic;
+   letter-spacing: 4px;
+   margin: 40px 0 0 0;
+   padding-right: 16px;
+   text-transform: uppercase;
+
+   @media @min_lg {
+      margin: 60px 0 0 0;
+   }
+
+   &:hover {
+     color: @blue;
+   }
+ }
+
+ .class_sidebar_content {
+   margin-top: 25px;
+
+   @media @min_lg {
+     margin-top: 65px;
+   }
+
+   p {
+     font-size: 18px;
+     margin: 0;
+     line-height: 1.4;
+   }
+ }
+
+ .class_sidebar_button {
+   .button_blue;
+   .inline_block;
+
+   margin-top: 40px;
+ }

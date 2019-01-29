@@ -1,0 +1,161 @@
+.grid_callout {
+  .relative;
+
+  // display: flex;
+  // justify-content: space-between;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  z-index: 1;
+}
+
+.grid_callout_container {
+  .relative;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.grid_callout_item {
+  background-color: @black;
+  flex: 0 1 100%;
+  margin: 0;
+  margin-bottom: 4%;
+  // padding: 80px 0;
+  padding: 50px 30px;
+  text-align: center;
+
+  @media @min_md {
+    padding: 55px 40px;
+  }
+
+  @media @min_lg {
+    flex: 0 1 48%;
+  }
+
+  @media @min_xl {
+    padding: 70px 50px;
+  }
+
+  // &:nth-child(odd) {
+  //   margin-right: 0;
+  //   padding: 70px 50px;
+  //
+  //   @media @min_md {
+  //     margin-right: 2%;
+  //     padding-right: 50px;
+  //     padding-left: 5%;
+  //   }
+  //
+  //   @media @min_lg {
+  //     padding-right: 80px;
+  //     padding-left: 5%;
+  //   }
+  //
+  //   @media @min_xl {
+  //     padding-right: 140px;
+  //     padding-left: 10.5%;
+  //   }
+  // }
+  //
+  // &:nth-child(even) {
+  //   padding: 70px 50px;
+  //
+  //   @media @min_md {
+  //     padding-right: 5%;
+  //     padding-left: 50px;
+  //   }
+  //
+  //   @media @min_lg {
+  //     padding-right: 5%;
+  //     padding-left: 80px;
+  //   }
+  //
+  //   @media @min_xl {
+  //     padding-right: 10.5%;
+  //     padding-left: 140px;
+  //   }
+  // }
+
+  &.blue {
+    .grid_callout_subtitle {
+      color: @blue;
+    }
+
+    .grid_callout_button {
+      .button_blue;
+    }
+  }
+
+  &.green {
+    .grid_callout_subtitle {
+      color: @green;
+    }
+
+    .grid_callout_button {
+      .button_green;
+    }
+  }
+
+  &.turquoise {
+    .grid_callout_subtitle {
+      color: @turquoise;
+    }
+
+    .grid_callout_button {
+      .button_turquoise;
+    }
+  }
+
+  &.pink {
+    .grid_callout_subtitle {
+      color: @pink;
+    }
+
+    .grid_callout_button {
+      .button_pink;
+    }
+  }
+}
+
+.grid_callout_subtitle {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.grid_callout_title {
+  color: @white;
+  margin: 0;
+  text-align: center;
+}
+
+.grid_callout_disclaimer {
+  .lato_black;
+
+  color: @gray_50;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.grid_callout_content {
+  margin: 20px 0 0 0;
+  padding: 0;
+
+  @media @min_md {
+    margin: 40px 0 0 0;
+  }
+
+  p {
+    color: @white;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.grid_callout_button {
+  margin: 50px auto 0 auto;
+}

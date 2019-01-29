@@ -1,0 +1,51 @@
+.page_header {
+  .relative;
+
+  background-color: @black;
+  padding: 260px 0 70px 0;
+  z-index: 1;
+
+  @media @min_md {
+    padding: 460px 0 75px 0;
+  }
+
+  &::before {
+    .absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: fade(@black, 60%);
+    content: '';
+    z-index: 2;
+  }
+
+  &.slim_header {
+    padding: 260px 0 80px 0;
+
+    @media @min_md {
+      padding: 275px 0 85px 0;
+    }
+  }
+}
+
+.page_header_cell {
+  .relative;
+
+  z-index: 5;
+}
+
+.page_header_title {
+
+}
+
+.page_header_subtitle {
+  margin: 0;
+}
+
+.page_header_intro {
+  color: @white;
+  margin: 0;
+}

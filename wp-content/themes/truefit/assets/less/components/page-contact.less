@@ -1,0 +1,93 @@
+.contact {
+  padding: 100px 0 0 0;
+}
+
+.form_title {
+  .tandelle_bold;
+
+  color: @black;
+  font-size: 66px;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+}
+
+//
+
+.sidebar_address {
+  margin-bottom: 60px;
+
+  @media @min_lg {
+    margin: 0;
+  }
+}
+
+.sidebar_logo {
+  .inline_block;
+  vertical-align: text-bottom;
+  margin-right: 30px;
+
+  @media @min_md {
+    vertical-align: bottom;
+  }
+
+  @media @min_lg {
+    .block;
+  }
+
+  .icon {
+    font-size: 12px;
+
+    @media @min_md {
+      font-size: 18px;
+    }
+  }
+}
+
+.sidebar_copy {
+  .inline_block;
+
+  @media @min_lg {
+    .block;
+
+    margin: 40px 0;
+  }
+}
+
+.sidebar_link {
+  .inline_block;
+  .lato_black;
+  .transition_link;
+
+  background: url('../images/blog_arrow.svg') no-repeat right center;
+  color: @black;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  padding-right: 16px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: @blue;
+  }
+}
+
+//
+
+.location_image {
+  margin-top: 120px;
+
+  @media @min_lg {
+    margin-top: 175px;
+
+  }
+}
+
+//
+
+.location_detail_map {
+  iframe {
+    .block;
+  }
+}

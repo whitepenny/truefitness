@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="111px" height="111px" viewBox="0 0 111 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>F Circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00554986877 0.018216678 44.9607096 0.018216678 44.9607096 35.2140856 0.00554986877 35.2140856"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="News-Detail" transform="translate(-94.000000, -1156.000000)">
+            <g id="F-Circle" transform="translate(94.000000, 1156.000000)">
+                <circle id="Oval-2" fill="#F7F7F7" cx="55.5" cy="55.5" r="55.5"></circle>
+                <g id="Group-8" transform="translate(20.000000, 30.000000)">
+                    <path d="M41.8721895,0 C34.9468117,0 28.6886155,4.47992738 26.2908817,11.1582924 L25.5555556,13.2052821 L53.6358234,13.2052821 L53.683366,13.2052821 C60.6071591,13.2052821 66.86694,8.72535474 69.2646738,2.04698972 L70,0 L41.8721895,0 Z" id="Fill-1" fill="#00ADEE"></path>
+                    <g id="Group-5" transform="translate(11.666667, 18.707483)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-4"></g>
+                        <path d="M13.0583269,0.018216678 L0.00554986877,35.2147092 L2.12127338,35.2147092 C9.0695378,35.2147092 15.3437524,30.9043938 17.7338538,24.4864666 L22.1445188,12.5719129 L28.9516292,12.5719129 C35.7317777,12.5719129 41.8727683,8.31304069 44.2327358,1.97461663 L44.9607096,0.018216678 L13.0583269,0.018216678 Z" id="Fill-3" fill="#00ADEE" mask="url(#mask-2)"></path>
+                    </g>
+                    <path d="M18.3333333,18.707483 L16.1863154,18.707483 C9.30852605,18.707483 3.09859155,23.1815384 0.734799745,29.839222 L0,31.9127651 L13.6137194,31.911122 L18.3333333,18.707483 Z" id="Fill-6" fill="#00ADEE"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
