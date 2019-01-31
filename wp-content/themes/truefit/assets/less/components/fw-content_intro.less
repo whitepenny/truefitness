@@ -29,19 +29,52 @@
 }
 
 .content_intro_content {
-  margin: 20px 0 40px 0;
-  padding: 0;
+  
+  margin: 10px 0;
+  font-size: 18px;
 
-  @media @min_md {
-    margin: 35px 0 60px 0;
+  @media @min_lg {
+    margin: 60px 0 0 0;
   }
 
   p {
-    color: @white;
-    font-size: 16px;
-    margin: 0;
-    line-height: 1.4;
+    font-size: 18px;
   }
+
+}
+
+.content_intro_list {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    font-weight: 900;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000;
+
+    &:hover {
+      color: @blue;
+    }
+
+    &:after {
+      &:extend(.icon);
+      &:extend(.icon:before);
+      &:extend(.icon.blue_arrow_large:before);
+      font-size: 18%;
+      margin-left: 10px;
+      margin-top: -4px;
+    }
+  }
+}
+
+.content_intro_cell {
+  margin-top: 40px;
 }
 
 .content_intro_button {
