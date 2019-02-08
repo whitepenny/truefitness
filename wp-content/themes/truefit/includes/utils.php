@@ -21,8 +21,7 @@ function tf_get_posts() {
   $posts = get_posts( array(
     'post_type'      => 'post',
     'numberposts'    => 3,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC'
+    'order'          => 'DSC'
   ) );
 
   return ( !empty( $posts ) ? $posts : false );
