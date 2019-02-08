@@ -15,9 +15,17 @@ get_header();
       </div>
       <div class="fs-cell fs-lg-7 post_detail_cell">
         
-        <p>
-            The page you are attempting to access may have been moved or deleted. We apologize for the inconvenience.
-        </p>
+        <section class="page_content">
+          <div class="fs-row">
+            <div class="fs-cell">
+                <p>
+                    The page you are attempting to access may have been moved or deleted. We apologize for the inconvenience.
+                </p>
+
+            </div>
+          </div>
+        </section>
+
       </div>
       <div class="fs-cell fs-lg-4 fs-lg-justify-end post_sidebar_cell">
         <?php get_template_part( 'layouts/sidebar_post' ); ?>
