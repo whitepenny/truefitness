@@ -1,7 +1,11 @@
 <?php
 
+$type = get_field( 'type' );
 $gallery = get_field( 'gallery' );
+$video = get_field( 'video', null, false );
 $header_links = get_field( 'header_links' );
+
+if ( empty( $type ) || $type == 'gallery' ) :
 
 $carousel_options = array(
   "autoAdvance" => true,
@@ -12,7 +16,6 @@ $carousel_options = array(
   // "paged"     => true,
 );
 ?>
-
 <section class="page_header_home">
   <div class="fs-row page_header_home_row">
     <div class="fs-cell fs-lg-half">
@@ -28,7 +31,6 @@ $carousel_options = array(
       </div>
       <div class="page_header_home_logo_mobile"></div>
     </div>
-
     <div class="header_right">
       <div class="header_gallery_container js-carousel" data-carousel-options="<?php echo tf_json_options( $carousel_options ); ?>">
         <?php foreach( $gallery as $image ) :
@@ -40,7 +42,38 @@ $carousel_options = array(
     </div>
     <div class="header_gallery_pagination"></div>
     <div class="page_header_home_logo"></div>
-
   </div>
-
 </section>
+<?php
+else :
+  $background_options = array(
+    'source' => array(
+      'video' => $video,
+    ),
+  );
+?>
+<section class="page_header_home">
+  <div class="fs-row page_header_home_row">
+    <div class="fs-cell fs-lg-half">
+      <div class="header_left">
+        <div class="header_menu_container">
+        <?php foreach( $header_links as $l ) : ?>
+          <a class="header_link" href="<?php echo $l['link']['url']; ?>">
+            <?php echo $l['link']['title']; ?>
+            <span class="icon blue_arrow_large"></span>
+          </a><br>
+        <?php endforeach; ?>
+        </div>
+      </div>
+      <div class="page_header_home_logo_mobile"></div>
+    </div>
+    <div class="header_right">
+      <div class="header_video js-background" data-background-options="<?php tf_json_options( $background_options ); ?>">
+      </div>
+    </div>
+    <div class="page_header_home_logo"></div>
+  </div>
+</section>
+<?php
+endif;
+?>

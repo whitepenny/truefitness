@@ -3,13 +3,46 @@
     "title": "Home Page Content",
     "fields": [
         {
+            "key": "field_5c69b4ee6b9ee",
+            "label": "Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "gallery": "Gallery",
+                "video": "Video"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5bfa901ef76c2",
             "label": "Gallery",
             "name": "gallery",
             "type": "gallery",
             "instructions": "",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c69b4ee6b9ee",
+                        "operator": "==",
+                        "value": "gallery"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -26,6 +59,30 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5c69b5116b9ef",
+            "label": "Video",
+            "name": "video",
+            "type": "oembed",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c69b4ee6b9ee",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
         },
         {
             "key": "field_5bfae277c876e",
@@ -83,5 +140,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1543168820
+    "modified": 1550431520
 }
