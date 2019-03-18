@@ -289,7 +289,7 @@ function tf_image_background_team_grid( $image_id ) {
 
   return array(
     'source' => array(
-      '0px'  => $square_xlarge['src'],
+      '0px'  => $square_medium['src'],
       '500px'    => $square_large['src'],
     ),
   );
