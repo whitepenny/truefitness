@@ -47,6 +47,7 @@ class QM_Collector_Conditionals extends QM_Collector {
 			'is_paged',
 			'is_post_type_archive',
 			'is_preview',
+			'is_privacy_policy',
 			'is_robots',
 			'is_rtl',
 			'is_search',
@@ -71,15 +72,18 @@ class QM_Collector_Conditionals extends QM_Collector {
 		 */
 		$conds = apply_filters( 'query_monitor_conditionals', $conds );
 
-		$true = $false = $na = array();
+		$true  = array();
+		$false = array();
+		$na    = array();
 
 		foreach ( $conds as $cond ) {
 			if ( function_exists( $cond ) ) {
-				if ( ( 'is_sticky' === $cond ) && ! get_post( $id = null ) ) {
+				$id = null;
+				if ( ( 'is_sticky' === $cond ) && ! get_post( $id ) ) {
 					# Special case for is_sticky to prevent PHP notices
 					$false[] = $cond;
 				} elseif ( ! is_multisite() && in_array( $cond, array( 'is_main_network', 'is_main_site' ), true ) ) {
-					# Special case for multisite conditionals to prevent them from being annoying on single site installs
+					# Special case for multisite conditionals to prevent them from being annoying on single site installations
 					$na[] = $cond;
 				} else {
 					if ( call_user_func( $cond ) ) {

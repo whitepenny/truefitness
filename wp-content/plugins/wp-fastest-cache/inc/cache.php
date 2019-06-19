@@ -81,20 +81,19 @@
 			if($this->isMobile() && isset($this->options->wpFastestCacheMobile)){
 				if(class_exists("WpFcMobileCache") && isset($this->options->wpFastestCacheMobileTheme)){
 					$wpfc_mobile = new WpFcMobileCache();
-					$this->cacheFilePath = $this->getWpContentDir()."/cache/".$wpfc_mobile->get_folder_name()."".$_SERVER["REQUEST_URI"];
+					$this->cacheFilePath = $this->getWpContentDir("/cache/wpfc-mobile-cache").$_SERVER["REQUEST_URI"];
 				}
 			}else{
 				if($this->isPluginActive('gtranslate/gtranslate.php')){
 					if(isset($_SERVER["HTTP_X_GT_LANG"])){
-						//$this->cacheFilePath = $this->getWpContentDir()."/cache/all/".$_SERVER["HTTP_X_GT_LANG"];
-						$this->cacheFilePath = $this->getWpContentDir()."/cache/all/".$_SERVER["HTTP_X_GT_LANG"].$_SERVER["REQUEST_URI"];
+						$this->cacheFilePath = $this->getWpContentDir("/cache/all/").$_SERVER["HTTP_X_GT_LANG"].$_SERVER["REQUEST_URI"];
 					}else if(isset($_SERVER["REDIRECT_URL"]) && $_SERVER["REDIRECT_URL"] != "/index.php"){
-						$this->cacheFilePath = $this->getWpContentDir()."/cache/all/".$_SERVER["REDIRECT_URL"];
+						$this->cacheFilePath = $this->getWpContentDir("/cache/all/").$_SERVER["REDIRECT_URL"];
 					}else if(isset($_SERVER["REQUEST_URI"])){
-						$this->cacheFilePath = $this->getWpContentDir()."/cache/all/".$_SERVER["REQUEST_URI"];
+						$this->cacheFilePath = $this->getWpContentDir("/cache/all/").$_SERVER["REQUEST_URI"];
 					}
 				}else{
-					$this->cacheFilePath = $this->getWpContentDir()."/cache/all/".$_SERVER["REQUEST_URI"];
+					$this->cacheFilePath = $this->getWpContentDir("/cache/all/").$_SERVER["REQUEST_URI"];
 				}
 			}
 
@@ -103,7 +102,9 @@
 			$language_negotiation_type = apply_filters('wpml_setting', false, 'language_negotiation_type');
 			if ($this->isPluginActive('sitepress-multilingual-cms/sitepress.php') && 2 == $language_negotiation_type){
 			    $current_language = apply_filters('wpml_current_language', false);
+			    
 			    $this->cacheFilePath = str_replace('/cache/all/', '/cache/all/'.$current_language.'/', $this->cacheFilePath);
+			    $this->cacheFilePath = str_replace('/cache/wpfc-mobile-cache/', '/cache/wpfc-mobile-cache/'.$current_language.'/', $this->cacheFilePath);
 			}
 
 
@@ -448,7 +449,7 @@
 					//"\/product"
 					//"\/product-category"
 
-					array_push($list, "\/cart", "\/checkout", "\/receipt", "\/confirmation", "\/wc-api\/");
+					array_push($list, "\/cart\/?$", "\/checkout", "\/receipt", "\/confirmation", "\/wc-api\/");
 				}
 			}
 
@@ -688,10 +689,6 @@
 				}else{
 					$content = $this->cacheDate($content);
 					$content = $this->minify($content);
-
-					$content = $this->cdn_rewrite($content);
-					
-					
 					$content = str_replace("<!--WPFC_FOOTER_START-->", "", $content);
 
 
@@ -725,16 +722,15 @@
 						}
 					}
 
-					// WP Hide & Security Enhancer
-					if($this->isPluginActive('wp-hide-security-enhancer/wp-hide.php')){
-						global $wph;
-						$content = $wph->functions->content_urls_replacement($content, $wph->functions->get_replacement_list());
-					}
+					$content = $this->cdn_rewrite($content);
 
 					$content = $this->fix_pre_tag($content, $buffer);
 
 					if($this->cacheFilePath){
+
 						$this->createFolder($this->cacheFilePath, $content);
+
+						do_action('wpfc_is_cacheable_action');
 					}
 
 					return $content."<!-- need to refresh to see cached version -->";
@@ -902,6 +898,8 @@
 						if(is_writable($this->getWpContentDir()) || ((is_dir($this->getWpContentDir()."/cache")) && (is_writable($this->getWpContentDir()."/cache")))){
 							if (@mkdir($cachFilePath, 0755, true)){
 
+								$buffer = (string) apply_filters('wpfc_buffer_callback_filter', $buffer, $extension);
+
 								file_put_contents($cachFilePath."/".$file_name.$extension, $buffer);
 								
 								if(class_exists("WpFastestCacheStatics")){
@@ -934,7 +932,8 @@
 						if(file_exists($cachFilePath."/".$file_name.$extension)){
 
 						}else{
-
+							$buffer = (string) apply_filters('wpfc_buffer_callback_filter', $buffer, $extension);
+							
 							file_put_contents($cachFilePath."/".$file_name.$extension, $buffer);
 							
 							if(class_exists("WpFastestCacheStatics")){
@@ -958,7 +957,7 @@
 		public function is_amp($content){
 			$request_uri = trim($_SERVER["REQUEST_URI"], "/");
 
-			if(preg_match("/^amp/", $request_uri) || preg_match("/amp$/", $request_uri)){
+			if(preg_match("/^amp/", $request_uri) || preg_match("/\/amp\//", $request_uri) || preg_match("/amp$/", $request_uri)){
 				if(preg_match("/<html[^\>]+amp[^\>]*>/i", $content)){
 					return true;
 				}

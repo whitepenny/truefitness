@@ -12,7 +12,7 @@ abstract class QM_Dispatcher {
 		$this->qm = $qm;
 
 		if ( ! defined( 'QM_COOKIE' ) ) {
-			define( 'QM_COOKIE', 'query_monitor_' . COOKIEHASH );
+			define( 'QM_COOKIE', 'wp-query_monitor_' . COOKIEHASH );
 		}
 
 		add_action( 'init', array( $this, 'init' ) );
@@ -26,7 +26,7 @@ abstract class QM_Dispatcher {
 		$e = error_get_last();
 
 		# Don't dispatch if a fatal has occurred:
-		if ( ! empty( $e ) && ( $e['type'] & ( E_ERROR | E_USER_ERROR | E_RECOVERABLE_ERROR ) ) ) {
+		if ( ! empty( $e ) && ( $e['type'] & QM_ERROR_FATALS ) ) {
 			return false;
 		}
 
@@ -108,7 +108,8 @@ abstract class QM_Dispatcher {
 	}
 
 	public static function verify_cookie( $value ) {
-		if ( $old_user_id = wp_validate_auth_cookie( $value, 'logged_in' ) ) {
+		$old_user_id = wp_validate_auth_cookie( $value, 'logged_in' );
+		if ( $old_user_id ) {
 			return user_can( $old_user_id, 'view_query_monitor' );
 		}
 		return false;

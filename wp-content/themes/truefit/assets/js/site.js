@@ -1,7 +1,10 @@
 //=require picturefill/dist/picturefill.min.js
 
 //=require formstone/dist/js/core.js
-//=require formstone/dist/js/background.js
+
+// require formstone/dist/js/background.js
+//=require includes/background.js
+
 //=require formstone/dist/js/checkpoint.js
 //=require formstone/dist/js/carousel.js
 //=require formstone/dist/js/mediaquery.js
@@ -16,7 +19,10 @@ document.createElement( "picture" );
 
   Formstone.Ready(function() {
 
-    $(".js-background").background();
+    $(".js-background").background().on("ready.background loaded.background", function() {
+      // console.log("ready");
+      // $(".js-background").background("play");
+    });
     $(".js-carousel").carousel();
     $(".js-checkpoint, [data-checkpoint-animation]").checkpoint({
       offset: 100,

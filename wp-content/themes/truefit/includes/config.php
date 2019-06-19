@@ -12,6 +12,6 @@ if ( strpos( $tf_page_url, '?') > -1 ) {
 
 // Globals
 
-define( 'TF_VERSION', '1.4.1' );
+define( 'TF_VERSION', '1.4.2' );
 define( 'TF_DEBUG', true );
 define( 'TF_DEV', ( strpos( $tf_page_url, '.test') !== false || strpos( $tf_page_url, 'localhost') !== false ) );
