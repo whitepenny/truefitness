@@ -12,6 +12,7 @@
 //=require formstone/dist/js/swap.js
 //=require formstone/dist/js/transition.js
 //=require formstone/dist/js/touch.js
+//=require formstone/dist/js/lightbox.js
 
 document.createElement( "picture" );
 
@@ -51,6 +52,17 @@ document.createElement( "picture" );
     });
 
   });
+
+  $('.lightbox').lightbox({
+    videoFormatter: {
+      "viddler": {
+        pattern: /(?:viddler\.com\/)((v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?\/]*)/,
+        format: function formatViddler(parts) {
+          return '//www.viddler.com/embed/' + parts[6];
+        }
+      }
+    }
+  })
 
 })(jQuery);
 

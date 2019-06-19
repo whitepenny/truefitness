@@ -4,6 +4,7 @@
   $content = get_sub_field( 'content' );
   $list = get_sub_field('list');
   $button = get_sub_field( 'button' );
+  $lightbox = get_sub_field('lightbox');
 ?>
 
 <section class="content_intro <?php echo ( empty( $button ) ? 'content_intro_thin' : '' ) ?>">
@@ -29,6 +30,10 @@
       <?php if( ! empty( $button ) ) : ?>
       <a class="content_intro_button js-checkpoint" data-checkpoint-animation="fade-up" href="<?php echo $button['url']; ?>"><?php echo $button['title']; ?></a>
       <?php endif; ?>
+      <?php if( ! empty( $lightbox ) ) : ?>
+      <a class="content_intro_button js-checkpoint lightbox" data-checkpoint-animation="fade-up" href="<?php echo $lightbox['url']; ?>"><?php echo $lightbox['title']; ?></a>
+      <?php endif; ?>
+
     </div>
   </div>
 </section>
