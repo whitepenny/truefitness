@@ -54,7 +54,7 @@ $navigation_options = array(
                 <a href="<?php echo $header_link; ?>" class="header_cta">
                   <span class="icon menu_arrow"></span>
                   <span class="screenreader">arrow</span>
-                  <span class="header_cta_text">TRY TRUEFITNESS<br>NOW</span>
+                  <span class="header_cta_text">TRY TRUEFITNESS<br>FREE NOW</span>
                 </a>
                 <button href="#" class="header_menu js-mobile_nav_handle js-nav_content">
                   <!-- <span class="icon menu"></span> -->
