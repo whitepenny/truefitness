@@ -9,6 +9,7 @@ $scripts_head = get_field( 'scripts_head', 'option' );
 $scripts_body = get_field( 'scripts_body', 'option' );
 
 $header_link = get_field( 'header_cta_link', 'option' );
+$header_buttons = get_field( 'header_buttons', 'option' );
 
 if ( is_front_page() ) {
   $home_header = "home_header";
@@ -51,11 +52,19 @@ $navigation_options = array(
                 <span class="screenreader"><?php echo $main_title; ?></span>
               </a>
               <div class="header_right">
-                <a href="<?php echo $header_link; ?>" class="header_cta">
+                <?php
+                  if ( ! empty( $header_buttons ) ) :
+                    foreach ( $header_buttons as $header_button ) :
+                ?>
+                <a href="<?php echo $header_button['link']['url']; ?>" class="header_cta">
                   <span class="icon menu_arrow"></span>
                   <span class="screenreader">arrow</span>
-                  <span class="header_cta_text">TRY TRUEFITNESS<br>FREE NOW</span>
+                  <span class="header_cta_text"><?php echo $header_button['link']['title']; ?></span>
                 </a>
+                <?php
+                    endforeach;
+                  endif;
+                ?>
                 <button href="#" class="header_menu js-mobile_nav_handle js-nav_content">
                   <!-- <span class="icon menu"></span> -->
                   <span class="menu_line first"></span>
