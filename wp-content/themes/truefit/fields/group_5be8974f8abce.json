@@ -233,7 +233,7 @@
             "collapsed": "",
             "min": 1,
             "max": 0,
-            "layout": "row",
+            "layout": "table",
             "button_label": "Add Button",
             "sub_fields": [
                 {
@@ -245,11 +245,30 @@
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array"
+                },
+                {
+                    "key": "field_5e53f41c3efe0",
+                    "label": "Lightbox",
+                    "name": "lightbox",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Open in lightbox.",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         }
@@ -271,5 +290,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582299408
+    "modified": 1582560487
 }

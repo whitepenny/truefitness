@@ -55,8 +55,9 @@ $navigation_options = array(
                 <?php
                   if ( ! empty( $header_buttons ) ) :
                     foreach ( $header_buttons as $header_button ) :
+                      $class = ( ! empty( $header_button['lightbox'] ) ) ? ' lightbox' : '';
                 ?>
-                <a href="<?php echo $header_button['link']['url']; ?>" class="header_cta">
+                <a href="<?php echo $header_button['link']['url']; ?>" class="header_cta <?php echo $class ?>">
                   <span class="icon menu_arrow"></span>
                   <span class="screenreader">arrow</span>
                   <span class="header_cta_text"><?php echo $header_button['link']['title']; ?></span>
