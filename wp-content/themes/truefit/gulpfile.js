@@ -32,7 +32,7 @@ gulp.task('sprites', function () {
     .pipe(plumber(plumberOptions))
     .pipe(svgSprite({
       preview: false,
-      cssFile: '../assets/less/base/sprite.less',
+      cssFile: '../assets/less/imports/sprite.less',
       svgPath: '../%f?t=' + timestamp,
       pngPath: '../%f?t=' + timestamp,
       svg: {
